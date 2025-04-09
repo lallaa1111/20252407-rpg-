@@ -3,7 +3,8 @@ package report_RPG;
 import java.util.Scanner;
 
 public class Rpg_before_calss {
-	static int hero_level, hero_power, hero_hp, hero_defense, hero_mp, hero_experience, hero_money;
+	static int hero_level, hero_power, hero_hp, hero_defense, hero_mp, hero_experience, hero_money; // 조건 1: 전역 변수 선언/
+																									// 정적 메서드 구성
 	static int monster_level, monster_power, monster_hp, monster_defense, monster_mp, monster_experience, monster_money;
 	static String hero_name, monster_name;
 	static String stars = "***************************************************************************************";
@@ -86,7 +87,7 @@ public class Rpg_before_calss {
 		}
 	}
 
-	static int potionStore_show(int money, int num) {
+	static int potionStore_show(int money, int num) { // 조건 5: 포션상점 프로세스
 		Scanner in = new Scanner(System.in);
 		System.out.println(stars + "\n포션 상점에 입장하였습니다.");
 		System.out
@@ -148,7 +149,7 @@ public class Rpg_before_calss {
 		return 0;
 	}
 
-	static void herolevelup() {
+	static void herolevelup() { // 조건 3: 히어로 레벨업 프로세스
 		if (hero_experience >= hero_level * 80) {
 			hero_level += 1;
 			System.out.printf("%s의 레벨이 %d가 되었습니다.\n", hero_name, hero_level);
@@ -158,7 +159,7 @@ public class Rpg_before_calss {
 		}
 	}
 
-	static void chooseMonster() {
+	static void chooseMonster() { // 조건 4 : 몬스터 구성
 		Scanner in = new Scanner(System.in);
 		int chooseMonster;
 		System.out.println("사냥터에 입장하였습니다.");
@@ -196,7 +197,7 @@ public class Rpg_before_calss {
 		}
 	}
 
-	static void fight() {
+	static void fight() { // 조건 2: 전투 프로세스
 		chooseMonster();
 		System.out.println(monster_name + "와의 전투를 시작합니다.");
 		while (monster_hp > 0) {
